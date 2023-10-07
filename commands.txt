@@ -1,0 +1,28 @@
+cd E/code-mine/'Trading Data Engineering'
+
+SSH: ssh -i "trade-kafka-data-engineering.pem" ec2-user@ec2-3-92-207-33.compute-1.amazonaws.com
+
+cd kafka_2.12-3.5.1
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Zookeeper config: bin/zookeeper-server-start.sh config/zookeeper.properties
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Kafka Server: export KAFKA_HEAP_OPTS="-Xmx256M -Xms128M"
+
+bin/kafka-server-start.sh config/server.properties
+
+It is pointing to private server , change server.properties so that it can run in public IP 
+
+To do this , you can follow any of the 2 approaches shared belwo --
+Do a "sudo nano config/server.properties" - change ADVERTISED_LISTENERS to public ip of the EC2 instance
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Topic: bin/kafka-topics.sh --create --topic trade-analysis --bootstrap-server 3.92.207.33:9092 --replication-factor 1 --partitions 1
+
+Producer: bin/kafka-console-producer.sh --topic trade-analysis --bootstrap-server 3.92.207.33:9092
+
+Consumer: bin/kafka-console-consumer.sh --topic trade-analysis --bootstrap-server 3.92.207.33:9092
