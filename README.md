@@ -11,9 +11,13 @@ The core of this project lies in its ability to ingest data from various sources
 Key features of this project include:
 
 Real-time Data Processing: Our pipeline is designed to handle streaming data, processing it as it arrives, which is crucial for time-sensitive applications.
+
 Handling Unstructured Data: We tackle one of the biggest challenges in data analytics by efficiently processing unstructured data, which forms a significant portion of modern data sources.
+
 Scalability: The architecture of our pipeline is built to scale, accommodating growing data volumes without a compromise in performance.
+
 Customizable Analytics: The pipeline is versatile and can be tailored to meet specific business requirements, providing meaningful insights that are relevant to your business context.
+
 This project is ideal for organizations that generate a high volume of unstructured data and require immediate insights for strategic decision-making. Whether it's for market analysis, customer behavior insights, or real-time monitoring, this data pipeline stands as a pivotal tool in the arsenal of data-driven businesses.
 
 ### Tools/Technologies used
